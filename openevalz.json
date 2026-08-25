@@ -1,0 +1,100 @@
+{
+  "openevalz_version": 1,
+  "eval": {
+    "id": "gdm_self_proliferation",
+    "slug": "gdm-self-proliferation",
+    "title": "GDM Dangerous Capabilities: Self-proliferation",
+    "group": "Scheming",
+    "tags": [
+      "Agent"
+    ],
+    "source": "core"
+  },
+  "upstream": {
+    "repo": "https://github.com/UKGovernmentBEIS/inspect_evals",
+    "path": "src/inspect_evals/gdm_self_proliferation",
+    "inspect_ai": "0.3.260",
+    "eval_version": "6-B",
+    "dependency": "gdm_self_proliferation"
+  },
+  "execution": {
+    "class": "sandbox-local",
+    "cost_class": "high",
+    "sandbox": [
+      "solver"
+    ],
+    "requires_internet": true,
+    "fast": false,
+    "supports_k8s": false,
+    "environment": ""
+  },
+  "tasks": [
+    {
+      "name": "gdm_sp01_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp02_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp03_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp04_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp05_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp07_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp08_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp09_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp10_e2e",
+      "samples": 1
+    },
+    {
+      "name": "gdm_sp12_e2e",
+      "samples": 1
+    }
+  ],
+  "total_samples": 10,
+  "external_assets": [
+    {
+      "type": "git_clone",
+      "source": "https://github.com/mistralai/mistral-src.git",
+      "state": "pinned"
+    },
+    {
+      "type": "direct_url",
+      "source": "https://files.mistral-7b-v0-1.mistral.ai/mistral-7B-v0.1.tar",
+      "state": "pinned"
+    },
+    {
+      "type": "direct_url",
+      "source": "pip install git+https://github.com/huggingface/{transformers,peft,accelerate}.git",
+      "state": "pinned"
+    },
+    {
+      "type": "direct_url",
+      "source": "https://raw.githubusercontent.com/UKGovernmentBEIS/inspect_evals/{version}/...secrets.zip",
+      "state": "controlled"
+    }
+  ],
+  "scaffolds": [
+    "baseline"
+  ],
+  "generated": "2026-08-25"
+}
